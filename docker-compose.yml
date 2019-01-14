@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  jupyter:
+    build: ./
+    environment:
+      TZ: Asia/Tokyo
+    volumes:
+      - "jupyter-api-sample-storage:/home/jovyan"
+    ports:
+      - "8888:8888"
+      - "8889:8889"
+    container_name: jupyter-sample
+
+volumes:
+  jupyter-api-sample-storage:
+    driver: local
+
